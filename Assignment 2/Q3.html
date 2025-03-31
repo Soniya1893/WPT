@@ -1,28 +1,85 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Assignment 2.3</title>
-    </head>
-    <body>
-        <h2>Sunbeam Registration Form</h2>
-        <form action="">
-            <div>
-                <label><B>Name :</B></label>
-                <input type = 'text'>
-                <label><B>Birth Date : </B></label><br>
-                <input type = 'text'>
-                <label><B>Email : </B></label><br>
-                <input type = 'text'>
-                <label><B>Password : </B></label><br>
-                <input type = 'text'>
-                <label><B>Address : </B></label><br>
-                <input type = 'text'>
-                
+<html lang="en">
 
-            </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 2.3</title>
+    <style>
+        video {
+            height: 350px;
+            width: 350px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Sunbeam Registration Form</h2>
+    <table>
+        <tbody>
+            <tr>
+                <td><video src="./source/samplevideo.mp4" controls></video></td>
+            </tr>
+            <tr>
+                <td>
+                    <form action=""></form>
+                    <div>
+                        <label for="First Name"><b>Name : </b></label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label for="Date of birth"><b>Date Of Birth : </b></label>
+                        <input type="date" id="birthday" name="birthday">
+                        <input type="submit">
+                    </div>
+                    <div>
+                        <label for="Email"><b>Email : </b></label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label for="Sunbeam"><b>Password:</b></label>
+                        <input type="password" id="Sunbeam" name="Sunbeam">
+                    </div>
+                    <div>
+                        <label for=""><b>Address</b></label>
+                        <textarea rows="4" name="address" id="">
+                    <pre>Sunbeam Institute of IT 'Anuda Chambers', 203 Shaniwar Peth, Near Gujar Hospital, Karad-415110 (maharastra).</pre>
+                </textarea>
+                    </div>
+                    <label for=""><b>Gender : </b></label>
+                    <input type="radio" name="gender" value="Male">Male
+                    <input type="radio" name="gender" value="Female">Female
+                    </div>
+                    <div>
+                        <label for=""><b>Course :</b></label>
+                        <select name="kcity">
+                            <option value="">choise Course</option>
+                            <option>DAC</option>
+                            <option>DMC</option>
+                            <option>DBDA</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for=""><b>Skills</b></label>
+                        <input type="checkbox" name="ss" value="C">C
+                        <input type="checkbox" name="ss" value="CPP">CPP
+                        <input type="checkbox" name="ss" value="JAVA">JAVA
+                    </div>
+                    <td>
+                        <input type="submit" value="save">
+                        <input type="reset" value="clear">
+                    </td>
+        </tbody>
+
+        <tfoot align="center" colspan="2">
+            
+        </tfoot>
+        </td>
         </form>
-    </form>
-    </body>
+        </tr>
+
+    </table>
+</body>
+
 </html>
