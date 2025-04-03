@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prompt Based functions</title>
+  </head>
+  <body>
+    <script>
+      var n = window.prompt(
+        "Enter number of times you want to print the message : "
+      );
+
+      var message = window.prompt("Enter the message : ");
+      const arr = [];
+
+      for (var i = 0; i < n; i++) {
+        arr[i] = message;
+      }
+
+      // console.log(`arr - ${arr}, typeof(arr)- ${typeof arr}`);
+      // console.log(arr);
+      console.log(`arr - ${n}, typeof(n)- ${typeof n}`);
+      for (var i = 0; i < n; i++) {
+        console.log(i + 1 + ". " + arr[i]);
+      }
+      window.alert("Check the console for repeated messages!!");
+    </script>
+  </body>
+</html>

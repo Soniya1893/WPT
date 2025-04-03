@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment6_1</title>
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <style>
+        .nDays{
+            display: flex;
+        }
+    </style>
+  </head>
+  <body>
+    <h1><b>Date & Greeting Web Page</h1>
+    <br />
+    <h2 id="date"></h2>
+    <div>
+    <h2 id="timeofday"></h2>
+    </div>
+    <div class = "nDays"><h2 id="noofdays" style="color: red;"><b>Number of days left till end of year: </b></h2><span id = "daysRem" style="font-size: xx-large; gap:5px; padding-top: 15px;"></span>
+    </div>
+    <script>
+      function getMonth(month) {
+        let months = [
+          "January",
+          "Febuary",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+
+        return months[parseInt(month) - 1];
+      }
+
+      function getFormattedDateTime() {
+        let now = new Date();
+
+        let year = now.getFullYear();
+        let month = String(now.getMonth() + 1); // Month (0-11) so +1
+        let day = String(now.getDate());
+        let startOfYear = new Date(now.getFullYear(), 0, 1);
+        let dayOfWeek = now.toLocaleDateString("en-US", { weekday: "long" });
+
+        let differenceInMilliseconds = now - startOfYear; // Time difference in milliseconds
+        let daysPassed = Math.floor(
+          differenceInMilliseconds / (1000 * 60 * 60 * 24)
+        ); // Convert to days
+        let daysRemaining = 365 - daysPassed;
+
+        let hours = now.getHours();
+        // let minutes = String(now.getMinutes());
+        // let seconds = String(now.getSeconds());
+
+        const message1 = document.getElementById("date");
+        message1.innerHTML = `<b>
+            Today is ${dayOfWeek} , ${day} ${getMonth(month)} ${year}
+          </b>`;
+        message1.style.color = "red";
+        // console.log(message1);
+
+        let message2 = document.getElementById("timeofday");
+        let greeting = "";
+        if (hours >= 5 && hours <= 12) greeting = "Morning";
+        else if (hours >= 13 && hours <= 17) greeting = "Afternoon";
+        else greeting = "Evening";
+
+        message2.innerHTML = `<b>Welcome, and Good ${greeting} to You.</b>`;
+        message2.style.color = "red";
+
+
+        let message3_1 = document.getElementById("daysRem"); // Create <span>
+       // message3.innerHTML = `<b>Number of days left till end of year: </b>`; // Set text
+        message3_1.innerHTML = ` ${String(daysRemaining)}` // Set text
+        message3_1.style.color = "blue"
+       
+        
+        // return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+      }
+
+      console.log(getFormattedDateTime());
+    </script>
+  </body>
+</html>
