@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <title>A7Q1 - Using jQuery selector</title>
+  </head>
+  <body>
+    <div align="center">
+      <img src="https://www.sunbeaminfo.in/img/new/new_logo.png" alt="" />
+    </div>
+
+    <form action="">
+      <table align="center">
+        <thead align="center">
+          <tr>
+            <td colspan="12">
+              <h2>Student Registration Form</h2>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="10">
+              <iframe
+                width="400"
+                height="300"
+                src="https://www.youtube.com/embed/JK8Bf5jSIsQ?si=RuMR8TiPqS-y5o72"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for=""><b>Name</label>
+            </td>
+            <td>
+              <input type="text" required id="name" />
+              <span class="text-danger d-none" id="sname"
+                >Only alphabets allowed, max 10 characters</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for=""><b>BirthDate</label>
+            </td>
+            <td>
+              <input type="date" id="dob" required />
+              <span class="text-danger d-none" id="sdob"
+                >you must be at least 18 yers old</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for=""><b>Email</label>
+            </td>
+            <td>
+              <input type="email" id="email" />
+              <span class="text-danger d-none" id="semail"
+                >Email is required</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for=""><b>Password</label>
+            </td>
+            <td>
+              <input type="password" id="pass" />
+              <span class="text-danger d-none" id="spass"
+                >Password must be at least 9 characters, contain # and one
+                digit</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for=""><b>Address</label>
+            </td>
+            <td>
+              <textarea id="add"></textarea>
+              <span class="text-danger d-none" id="sadd"
+                >Address is required</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for=""><b>Gender</label>
+            </td>
+            <td>
+              <input type="radio" name="gender" class="gender" /> Male
+              <input type="radio" name="gender" class="gender" />Female
+              <span class="text-danger d-none" id="sgender"
+                >Gender is required</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for=""><b>Upload Photo</label>
+            </td>
+            <td>
+              <input type="file" id="file" />
+              <span class="text-danger d-none" id="sphoto"
+                >Photo is required</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for=""><b>Select Your Course</label>
+            </td>
+            <td>
+              
+              <select id="course">
+                <option value=""><b>Select Course</option>
+                <option value="">Cpp</option>
+                <option value="">Java</option>
+                <option value="">DBT</option>
+              </select>
+              <span class="text-danger d-none" id="scourse"
+                >Please select a course</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for=""><b>Skill Sets</label>
+            </td>
+            <td>
+              <input type="checkbox" class="checkk" /> Java :
+              <input type="checkbox" class="checkk" /> Cpp :
+              <input type="checkbox" class="checkk" /> OS
+
+              <span class="text-danger d-none" id="scheck"
+                >Select least one skill</span
+              >
+            </td>
+          </tr>
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td align="left">
+              <input type="submit" id="save" value="Save" />
+              <input type="reset" name="" value="Reset" />
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </form>
+
+    <script>
+      let name = $("#name");
+      console.log(name)
+      let dob = $("#dob");
+      let pass = $("#pass");
+      let email = $("#email");
+      let add = $("#add");
+      let gender = $("#gender");
+      let file = $("#file");
+      let course = $("#course");
+      let checkk = $("#checkk");
+      let save = $("#save");
+
+      let curdate = new Date();
+      let newd = `${curdate.getFullYear()}-${curdate.getDate()}-${
+        curdate.getMonth() + 1
+      }`;
+
+      let sname = $("#sname");
+      let sdob = $("#sdob");
+      let semail = $("#semail");
+      let spass = $("#spass");
+      let sadd = $("#sadd");
+      let sgender = $("#sgender");
+      let scourse = $("#scourse");
+      let sphoto =$("#sphoto");
+      let scheck =$("#scheck");
+      console.log(sname);
+
+      save.on("click", (e) => {
+        e.preventDefault();
+
+        // for name input
+        let pattern = /[a-zA-Z\s-]+$/;
+        if (!pattern.test(name.val()) || name.val().length > 10) {
+          sname.removeClass("d-none");
+        } else {
+          sname.addClass("d-none");
+        }
+
+        // for dob input
+        let dobv = new Date(dob.val());
+        let age = curdate.getFullYear() - dobv.getFullYear();
+
+        if (age < 18 || !dob.val()) {
+          sdob.removeClass("d-none");
+        } else {
+          sdob.addClass("d-none");
+        }
+
+        // for email validation
+
+        if (!email.val()) {
+          semail.removeClass("d-none");
+        } else {
+          semail.addClass("d-none");
+        }
+
+        // for password
+        let patern = /(?=.*[0-9])(?=.*#).{9,}$/;
+
+        if (!patern.test(pass.val())) {
+          spass.removeClass("d-none");
+        } else {
+          spass.addClass("d-none");
+        }
+
+        // address validation
+        if (!add.val()) {
+          sadd.removeClass("d-none");
+        } else {
+          sadd.addClass("d-none");
+        }
+
+        //gender validation
+        let gendercheck = 0;
+
+        for (e of gender) {
+          if (!e.checked) gendercheck++;
+        }
+        if (gendercheck == gender.length) {
+          sgender.removeClass("d-none");
+        } else {
+          sgender.addClass("d-none");
+        }
+
+        // file validation
+        if (!file.val()) {
+          sphoto.removeClass("d-none");
+        } else {
+          sphoto.addClass("d-none");
+        }
+
+        // course validation
+
+        let coursecheck = 0;
+        for (c of course) {
+          if (c.innerHTML === "Select Course") continue;
+          if (!c.selected) coursecheck++;
+        }
+
+        if (coursecheck === course.length - 1) {
+          scourse.removeClass("d-none");
+        } else {
+          scourse.addClass("d-none");
+        }
+
+        //skill validation
+        let skillcheck = 0;
+        for (s of checkk) {
+          console.log(s);
+          if (!s.checked) skillcheck++;
+        }
+
+        if (skillcheck === checkk.length) {
+          scheck.removeClass("d-none");
+        } else {
+          scheck.addClass("d-none");
+        }
+      });
+    </script>
+  </body>
+</html>
